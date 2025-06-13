@@ -23,29 +23,25 @@
 
 // module.exports = router;
 
-// Import required modules
+// File: routes/BorrowalRouter.js
+
 const express = require("express");
 const router = express.Router();
 
-// Import functions from controller
-// Path ini sudah benar, memastikan nama file controller adalah 'BorrowalController.js'
+// Memuat controller dengan nama file yang sudah kita perbaiki
 const {
     getBorrowal,
     getAllBorrowals,
     addBorrowal,
     updateBorrowal,
     deleteBorrowal
-} = require('../controllers/BorrowalController');
+} = require('../controllers/BorrowalController'); // Path ini sekarang 100% benar
 
-// Penyesuaian: Langsung memanggil fungsi controllernya. Ini lebih ringkas.
+// Menggunakan penulisan yang ringkas dan standar
 router.get("/getAll", getAllBorrowals);
-
 router.get("/get/:id", getBorrowal);
-
 router.post("/add", addBorrowal);
-
 router.put("/update/:id", updateBorrowal);
-
 router.delete("/delete/:id", deleteBorrowal);
 
 module.exports = router;
