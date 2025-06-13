@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const Borrowal = require('../models/borrowal');     // model peminjaman
-const BookReturn = require('../models/bookReturn'); // model pengembalian
+const Borrowal = require('../models/Borrowal');     // model peminjaman
+const BookReturn = require('../models/BookReturn'); // model pengembalian
 const User = require('../models/User');             // model user
 
 // Helper untuk format tanggal jadi yyyy-mm-dd

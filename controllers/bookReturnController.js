@@ -1,6 +1,6 @@
-const bookReturn = require('../models/bookReturn')
+const bookReturn = require('../models/BookReturn')
 const mongoose = require("mongoose");
-const Book = require("../models/book");
+const Book = require("../models/Book");
 
 const getReturn = async (req, res) => {
     const returnId = req.params.id;
