@@ -12,7 +12,8 @@ const bodyparser = require("body-parser");
 const authRouter = require("./routes/authRouter");
 const bookRouter = require("./routes/bookRouter");
 const authorRouter = require("./routes/authorRouter");
-const borrowalRouter = require("./routes/borrowalRouter");
+// const borrowalRouter = require("./routes/borrowalRouter");
+const borrowalRouter = require("./routes/BorrowalRouter.js");
 const bookReturnRouter = require("./routes/bookReturnRouter");
 
 const genreRouter = require("./routes/genreRouter");
