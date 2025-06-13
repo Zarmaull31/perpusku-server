@@ -111,13 +111,10 @@
 // }
 
 
-// File: controllers/BorrowalController.js (Versi Modern & Efisien)
-
-const Borrowal = require('../models/Borrowal'); // Menggunakan nama model yang sudah standar
-const Book = require("../models/Book");
+const Borrowal = require('../models/Borrowal'); // Perbaikan: 'B' besar
+const Book = require("../models/Book");       // Perbaikan: 'B' besar
 const mongoose = require("mongoose");
 
-// Menggunakan async/await dengan try/catch untuk semua fungsi
 const getBorrowal = async (req, res) => {
     try {
         const borrowal = await Borrowal.findById(req.params.id).populate('memberId').populate('bookId');
@@ -126,7 +123,7 @@ const getBorrowal = async (req, res) => {
     } catch (err) {
         return res.status(400).json({ success: false, err: err.message });
     }
-}
+};
 
 const getAllBorrowals = async (req, res) => {
     try {
@@ -135,7 +132,7 @@ const getAllBorrowals = async (req, res) => {
     } catch (err) {
         return res.status(400).json({ success: false, err: err.message });
     }
-}
+};
 
 const addBorrowal = async (req, res) => {
     try {
@@ -150,7 +147,7 @@ const addBorrowal = async (req, res) => {
     } catch (err) {
         return res.status(400).json({ success: false, err: err.message });
     }
-}
+};
 
 const updateBorrowal = async (req, res) => {
     try {
@@ -160,7 +157,7 @@ const updateBorrowal = async (req, res) => {
     } catch (err) {
         return res.status(400).json({ success: false, err: err.message });
     }
-}
+};
 
 const deleteBorrowal = async (req, res) => {
     try {
@@ -171,7 +168,7 @@ const deleteBorrowal = async (req, res) => {
     } catch (err) {
         return res.status(400).json({ success: false, err: err.message });
     }
-}
+};
 
 module.exports = {
     getBorrowal,
@@ -179,4 +176,4 @@ module.exports = {
     addBorrowal,
     updateBorrowal,
     deleteBorrowal
-}
+};

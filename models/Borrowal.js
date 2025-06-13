@@ -25,8 +25,6 @@
 
 // module.exports = mongoose.models.Borrowal || mongoose.model('Borrowal', borrowalSchema);
 
-// File: models/borrowal.js (Versi Benar)
-
 const mongoose = require('mongoose');
 
 const borrowalSchema = new mongoose.Schema({
@@ -40,14 +38,12 @@ const borrowalSchema = new mongoose.Schema({
     ref: 'Book', // Referensi ke model Book
     required: true
   },
-  // bookName tidak perlu jika kita sudah punya bookId
   status: {
     type: String,
-    enum: ['BORROWED', 'RETURNED'], // Hanya boleh diisi salah satu dari ini
+    enum: ['BORROWED', 'RETURNED'],
     default: 'BORROWED',
     required: true
   },
 }, { timestamps: true });
 
-// Gunakan nama 'Borrowal' agar konsisten
 module.exports = mongoose.models.Borrowal || mongoose.model('Borrowal', borrowalSchema);

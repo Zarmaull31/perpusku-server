@@ -23,21 +23,19 @@
 
 // module.exports = router;
 
-// File: routes/BorrowalRouter.js
-
 const express = require("express");
 const router = express.Router();
 
-// Memuat controller dengan nama file yang sudah kita perbaiki
+// Memuat fungsi dari BorrowalController yang sudah benar
 const {
     getBorrowal,
     getAllBorrowals,
     addBorrowal,
     updateBorrowal,
     deleteBorrowal
-} = require('../controllers/BorrowalController'); // Path ini sekarang 100% benar
+} = require('../controllers/BorrowalController');
 
-// Menggunakan penulisan yang ringkas dan standar
+// Menggunakan penulisan yang ringkas
 router.get("/getAll", getAllBorrowals);
 router.get("/get/:id", getBorrowal);
 router.post("/add", addBorrowal);
