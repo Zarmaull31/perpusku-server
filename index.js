@@ -142,6 +142,7 @@ const passport = require("passport");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");
+// const createadmin = require("./createAdmin");
 
 // Konfigurasi environment variables
 if (process.env.NODE_ENV !== "production") {
@@ -203,8 +204,10 @@ app.use("/api/user", userRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/statistik", statistikRoutes);
 
+// createadmin(); // Panggil fungsi untuk membuat admin jika belum ada
 // Root route untuk testing
 app.get("/", (req, res) => res.send("Selamat datang di API Web Perpusku"));
+
 
 // Jalankan Server
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}!`));
